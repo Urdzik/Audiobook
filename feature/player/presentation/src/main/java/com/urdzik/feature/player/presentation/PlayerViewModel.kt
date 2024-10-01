@@ -16,30 +16,8 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
+class PlayerViewModel() : ViewModel(), CoroutineScopeLaunchWithHandlerBehaviour {
 
-val book = BookResponce(
-    id = "1",
-    cover = "https://duckduckgo.com/?q=book",
-    name = "book",
-    chapter = emptyList()
-)
-
-
-val tempUiState = PlayerScreenUIState(
-    title = StringResource(audiobook.R.string.key_point, 1, book.chapter.size),
-    description = StringResource("Design is not how a thing looks, but how it works."),
-    imageUrl = book.cover,
-    isPlaying = false,
-    speed = Speed.X1,
-    book = book,
-    currentChapter = Chapter(),
-)
-
-class PlayerViewModel(
-    private val firebaseApi: FirebaseApi
-) : ViewModel(), CoroutineScopeLaunchWithHandlerBehaviour {
-
-    private val _uiState = MutableStateFlow(tempUiState)
     val uiState: StateFlow<PlayerScreenUIState> = _uiState.asStateFlow()
 
     private val _stateEvent = MutableStateFlow(PlayerScreenStateEvent())
