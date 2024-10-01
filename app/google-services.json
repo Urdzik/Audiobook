@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "181381010663",
+    "project_id": "audiobook-ddb00",
+    "storage_bucket": "audiobook-ddb00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181381010663:android:27a62a2df0ff5940dbbe42",
+        "android_client_info": {
+          "package_name": "com.urdzik.audiobook"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCq76SZXtiLpQD6ECurqUvWbJenLDCO5Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

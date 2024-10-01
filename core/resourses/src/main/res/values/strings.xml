@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Audiobook</string>
+
+    <!--audio player-->
+    <string name="key_point">Key point %1$s of %2$s</string>
+
+    <!--audio spreed-->
+    <string name="speed">Speed</string>
+    <string name="speed_0_5">0.5x</string>
+    <string name="speed_0_75">0.75x</string>
+    <string name="speed_1_0">1x</string>
+    <string name="speed_1_5">1.5x</string>
+    <string name="speed_2_0">2x</string>
+</resources>
