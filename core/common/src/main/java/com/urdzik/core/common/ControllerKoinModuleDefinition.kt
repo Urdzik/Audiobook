@@ -2,7 +2,6 @@ package com.urdzik.core.common
 
 import org.koin.core.definition.KoinDefinition
 import org.koin.core.module.dsl.createdAtStart
-import org.koin.core.module.dsl.onOptions
 import org.koin.core.module.dsl.withOptions
 import org.koin.core.parameter.ParametersHolder
 import org.koin.core.qualifier.Qualifier
@@ -54,7 +53,7 @@ inline fun <reified Context : Any, reified Controller : Any> ScopeDSL.controller
             getController(params)
         }
 
-        ControllerCreationType.Scoped -> scoped(qualifier = qualifier) {params ->
+        ControllerCreationType.Scoped -> scoped(qualifier = qualifier) { params ->
             val context = getContext(params)
             declare(context)
             getController(params)
@@ -68,6 +67,6 @@ inline fun <reified Context : Any, reified Controller : Any> ScopeDSL.controller
 }
 
 sealed interface ControllerCreationType {
-    object Scoped : ControllerCreationType
-    object Factory : ControllerCreationType
+    data object Scoped : ControllerCreationType
+    data object Factory : ControllerCreationType
 }

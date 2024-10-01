@@ -1,43 +1,33 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.kotlin.android)
+    id("audiobook.android.library")
+    kotlin("kapt")
 }
 
 android {
     namespace = "com.urdzik.core.database.impl"
-    compileSdk = 34
-
     defaultConfig {
-        minSdk = 26
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
-        }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
     }
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
+    implementation(libs.room.runtime)
+    implementation(libs.androidx.junit.ktx)
+    androidTestImplementation(libs.androidx.core.testing)
+    kapt(libs.room.compiler)
+    implementation(projects.core.database.contract)
+    implementation(libs.room.ktx)
+    implementation(platform(libs.koin.bom))
+    implementation(libs.koin.core)
     testImplementation(libs.junit)
+    testImplementation(libs.junit.jupiter)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    androidTestImplementation(platform(libs.androidx.compose.bom))
+    androidTestImplementation(libs.androidx.ui.test.junit4)
+    testImplementation(libs.mockito.kotlin)
+    testImplementation(libs.room.testing)
 }

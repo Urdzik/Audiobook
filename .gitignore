@@ -13,3 +13,8 @@
 .externalNativeBuild
 .cxx
 local.properties
+/.gradle/
+/.idea/
+/.kotlin/
+/build-logic/.gradle/
+/build-logic/build/

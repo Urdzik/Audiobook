@@ -6,17 +6,13 @@ import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.urdzik.core.ui.theme.AudiobookTheme
-import com.urdzik.feature.player.presentation.PlayerRoute
+import com.urdzik.feature.player.presentation.ui.PlayerRoute
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,11 +26,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize()
                 ) { innerPadding ->
                     NavHost(
-                        startDestination = "player",
+                        startDestination = Routes.Player.route,
                         modifier = Modifier.padding(innerPadding),
                         navController = navController
                     ) {
-                        composable("player") {
+                        composable(Routes.Player.route) {
                             PlayerRoute()
                         }
                     }
@@ -42,5 +38,9 @@ class MainActivity : ComponentActivity() {
             }
         }
     }
+}
+
+sealed class Routes(val route: String) {
+    data object Player : Routes("player")
 }
 

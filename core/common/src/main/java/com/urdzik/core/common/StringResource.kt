@@ -96,6 +96,6 @@ private fun stringResource(resource: StringResourceImpl.Listified) = resource.va
         )
     }.joinToString(separator = "")
 
-val StringResource.composed
+val StringResource?.composed
     @Composable
-    get() = stringResource(this)
+    get() = stringResource(this?: StringResource(""))
