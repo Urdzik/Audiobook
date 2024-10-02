@@ -8,7 +8,7 @@ import com.urdzik.feature.player.data.model.Chapter
 @OptIn(UnstableApi::class)
 fun MediaItem.toChapter() =
     Chapter(
-        mediaId = mediaId,
+        id = mediaId,
         title = mediaMetadata.title.toString(),
         duration = mediaMetadata.durationMs?.toInt() ?: 0
     )

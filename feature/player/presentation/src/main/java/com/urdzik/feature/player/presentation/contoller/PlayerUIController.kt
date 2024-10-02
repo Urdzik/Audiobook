@@ -2,7 +2,6 @@ package com.urdzik.feature.player.presentation.contoller
 
 import audiobook.R
 import com.urdzik.core.common.ControllerCreationType
-import com.urdzik.core.common.CoroutineScopeLaunchWithHandlerBehaviour
 import com.urdzik.core.common.StringResource
 import com.urdzik.core.common.ViewModelControllerContext
 import com.urdzik.core.common.controllerDefinition
@@ -108,7 +107,7 @@ class PlayerUIController(
     private fun saveProgress() {
         viewModelControllerContext.coroutineScope.launch {
             playerRepository.satLastChapterIdByBookId(
-                chapterId = uiState.value.currentChapter?.mediaId ?: ""
+                chapterId = uiState.value.currentChapter?.id ?: ""
             )
         }
     }

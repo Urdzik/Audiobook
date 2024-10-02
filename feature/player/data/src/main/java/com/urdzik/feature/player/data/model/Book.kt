@@ -8,7 +8,7 @@ data class Book(
 )
 
 data class Chapter(
-    val mediaId: String = "",
+    val id: String = "",
     val title: String = "",
     val audioUrl: String = "",
     val duration: Int = 0

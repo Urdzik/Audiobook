@@ -21,7 +21,7 @@ fun List<ChapterResponse>.toChapter(): List<Chapter> {
 
 fun ChapterResponse.toChapter(): Chapter {
     return Chapter(
-        mediaId = id,
+        id = id,
         title = title,
         audioUrl = audioUrl,
         duration = duration
