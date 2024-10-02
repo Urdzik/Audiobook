@@ -40,5 +40,4 @@ interface CoroutineScopeLaunchWithHandlerBehaviour {
 fun coroutineContextWithHandler(tag: String) =
     Dispatchers.Main.immediate + CoroutineExceptionHandler { _, throwable ->
         Log.e("$tag", "CoroutineScopeLaunchWithHandlerBehaviour debug: $throwable")
-//        Firebase.crashlytics.recordException(throwable)
     }

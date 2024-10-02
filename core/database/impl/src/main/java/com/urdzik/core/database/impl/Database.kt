@@ -19,17 +19,15 @@ internal abstract class AppDatabase : RoomDatabase() {
 
 val databaseModule = module {
 
-    // Provide AppDatabase instance
     single {
         Room.databaseBuilder(
-            get(), // Koin provides the ApplicationContext
+            get(),
             AppDatabase::class.java,
             "database"
         ).fallbackToDestructiveMigration()
             .build()
     }
 
-    // Provide PlayerDao instance
     single {
         get<AppDatabase>().playerDao()
     }

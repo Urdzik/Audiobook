@@ -5,7 +5,6 @@ import com.urdzik.core.api.contract.model.ChapterResponse
 import com.urdzik.feature.player.data.model.Book
 import com.urdzik.feature.player.data.model.Chapter
 
-// book response to book
 fun BookResponse.toBook(): Book {
     return Book(
         id = id,
@@ -20,7 +19,6 @@ fun List<ChapterResponse>.toChapter(): List<Chapter> {
 }
 
 
-// chapter response to chapter
 fun ChapterResponse.toChapter(): Chapter {
     return Chapter(
         mediaId = id,
